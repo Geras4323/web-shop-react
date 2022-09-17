@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Login() {
+function NewPassword() {
 
   return (
     <div className="w-screen h-screen grid justify-center items-center">
@@ -13,7 +13,7 @@ function Login() {
         <form action="/" className="flex flex-col w-full">
           <label htmlFor="password" className="text-sm font-bold mb-1">Password</label>
           <input type="password" id="password" placeholder="*********" className="bg-text-input-field border-none rounded-lg h-10 text-md p-2 mb-3" />
-          <label htmlFor="new-password" className="text-sm font-bold mb-1">Password</label>
+          <label htmlFor="new-password" className="text-sm font-bold mb-1">Re-enter Password</label>
           <input type="password" id="new-password" placeholder="*********" className="bg-text-input-field border-none rounded-lg h-10 text-md p-2 mb-3" />
 
           <input type="submit" value="Confirm" className="bg-hospital-green border-none rounded-lg text-white w-full cursor-pointer text-md font-bold h-12 mt-4 mb-8" />
@@ -23,4 +23,4 @@ function Login() {
   );
 }
 
-export { Login };
+export { NewPassword };
