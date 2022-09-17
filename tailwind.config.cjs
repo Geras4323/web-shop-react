@@ -31,6 +31,10 @@ module.exports = {
         '160': '40rem',
         '192': '48rem',
       },
+      gridTemplateColumns: {
+        'autosm': 'repeat(auto-fill, 140px)',
+        'automd': 'repeat(auto-fill, 240px)'
+      }
     },
   },
   plugins: [],

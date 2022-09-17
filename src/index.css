@@ -5,3 +5,7 @@
 .Header_Item {
   @apply border border-white p-2 rounded-lg   hover:border-hospital-green hover:text-hospital-green
 }
+
+.MobileMenu_Item {
+  @apply text-black font-bold
+}
