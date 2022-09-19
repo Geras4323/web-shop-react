@@ -9,7 +9,7 @@ function ProductCard({price, title, image}) {
 
   return (
     <div className="w-36   sm:w-60">
-      <img src={image} className="w-36 h-36 rounded-2xl object-cover   sm:w-60 sm:h-60" />
+      <img src={image} alt={title} className="w-36 h-36 rounded-2xl object-cover   sm:w-60 sm:h-60" />
       <div className="flex justify-between items-center mt-3">
         <div>
           <p className="font-bold text-md mt-0 mb-1">{price}</p>
