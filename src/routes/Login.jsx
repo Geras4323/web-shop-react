@@ -1,19 +1,35 @@
 import React from 'react';
 
 function Login() {
+  const form = React.useRef(null);
+
+  const handleSubmit = () => {
+    const formData = new FormData(form.current);
+    const data = {
+      username: formData.get('email'),
+      password: formData.get('password')
+    }
+    console.log(data);
+  }
+
   return (
     <div className="w-screen h-screen grid justify-center items-center">
       <div className="w-80 flex flex-col items-center">
         <img src="../../src/assets/logos/logo_yard_sale.svg" alt="logo" className="w-32 mb-12   sm:hidden" />
 
-        <form action="/" className="flex flex-col w-full">
+        <form action="/" className="flex flex-col w-full" ref={form}>
           <label htmlFor="email" className="text-sm font-bold mb-1">Email address</label>
-          <input type="text" id="email" placeholder="platzi@example.com" className="bg-text-input-field border-none rounded-lg h-10 text-md p-2 mb-6" />
+          <input type="text" name="email" placeholder="platzi@example.com" className="bg-text-input-field border-none rounded-lg h-10 text-md p-2 mb-6" />
 
           <label htmlFor="password" className="text-sm font-bold mb-1">Password</label>
-          <input type="password" id="password" placeholder="*********" className="bg-text-input-field border-none rounded-lg h-10 text-md p-2 mb-3" />
+          <input type="password" name="password" placeholder="*********" className="bg-text-input-field border-none rounded-lg h-10 text-md p-2 mb-3" />
 
-          <input type="submit" value="Log in" className="bg-hospital-green border-none rounded-lg text-white w-full cursor-pointer text-md font-bold h-12 mt-4 mb-8" />
+          <button
+            className="bg-hospital-green border-none rounded-lg text-white w-full cursor-pointer text-md font-bold h-12 mt-4 mb-8"
+            type="button"
+            onClick={handleSubmit}>
+            Log in
+          </button>
           <a href="/" className="text-hospital-green text-sm text-center mb-10">Forgot my password</a>
         </form>
 
