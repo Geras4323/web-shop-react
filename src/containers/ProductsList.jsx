@@ -11,7 +11,7 @@ function ProductsList() {
   const products = useGetProducts(API)
 
   return (
-    <section className="my-8">
+    <section className="mt-24 mb-8">
       <div className="grid grid-cols-autosm gap-6 place-content-center   sm:grid-cols-automd">
 
         {products.map(product => (

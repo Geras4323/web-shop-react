@@ -22,17 +22,18 @@ function Header() {
     setIsShoppingCartShown(!isShoppingCartShown);
   }
 
+
   return (
-    <nav className="flex justify-between px-6 border-b border-b-very-light-pink">
+    <nav className="fixed top-0 left-0 right-0  bg-white z-10 flex justify-between px-6 border-b border-b-very-light-pink">
       <img
         src="../../src/assets/icons/icon_menu.svg" alt="menu"
-        className="sm:hidden"
+        className="md:hidden"
         onClick={handleShowMenu}
         />
 
       <div className="flex">
         <img src="../../src/assets/logos/logo_yard_sale.svg" alt="logo" className="w-24" />
-        <ul className="p-0 m-0 hidden   sm:flex items-center h-16 ml-3 text-very-light-pink">
+        <ul className="p-0 m-0 hidden   md:flex items-center h-16 ml-3 text-very-light-pink">
           <li>
             <a href="/" className="Header_Item">All</a>
           </li>
@@ -57,7 +58,7 @@ function Header() {
       <div className="navbar-right">
         <ul className="p-0 m-0 flex items-center h-16">
           <li
-            className="text-very-light-pink text-sm mr-3 hidden   sm:block   hover:cursor-pointer hover:text-hospital-green"
+            className="text-very-light-pink text-sm mr-3 hidden   md:block   hover:cursor-pointer hover:text-hospital-green"
             onClick={handleShowMenu}
           >
             platzi@example.com
@@ -75,7 +76,7 @@ function Header() {
                 </div>
             }
           </li>
-          {isShoppingCartShown ? <ShoppingCart /> : null}
+          {isShoppingCartShown ? <ShoppingCart closeShoppingCart={handleShowShoppingCart}/> : null}
         </ul>
       </div>
 
