@@ -7,7 +7,11 @@ function useInitialState() {
     setCart([...cart, product]);
   }
 
-  return {cart, addToCart};
+  function removeFromCart(indexValue) {
+    setCart(cart.filter((product, index) => index !== indexValue))
+  }
+
+  return { cart, addToCart, removeFromCart };
 }
 
 export { useInitialState };

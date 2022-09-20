@@ -15,10 +15,11 @@ function ShoppingCart() {
       </div>
 
       <div className="mt-4">
-        {cart.map(item => (
+        {cart.map((item, index) => (
           <ShoppingCartItem
             product={item}
-            key={`orderItem-${item.id}`}
+            key={index}
+            indexValue={index}
           />
         ))}
 
