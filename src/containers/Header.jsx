@@ -3,9 +3,13 @@ import React from 'react';
 import { MobileMenu } from '../components/MobileMenu';
 import { DesktopMenu } from '../components/DesktopMenu';
 
+import { AppContext } from '../contexts/AppContext';
+
 
 function Header() {
   const [isMenuShown, setIsMenuShown] = React.useState(false)
+
+  const { cart } = React.useContext(AppContext);
 
   const handleShowMenu = () => {
     setIsMenuShown(!isMenuShown);
@@ -54,7 +58,11 @@ function Header() {
           {isMenuShown ? <MobileMenu /> : null}
           <li className="relative">
             <img src="../../src/assets/icons/icon_shopping_cart.svg" alt="shopping cart" />
-            <div className="w-4 h-4 bg-hospital-green rounded-full text-sm font-bold absolute -top-1 -right-1 flex justify-center items-center">2</div>
+            {cart.length > 0
+              && <div className="w-4 h-4 bg-hospital-green rounded-full text-sm font-bold absolute -top-1 -right-1 flex justify-center items-center">
+                  {cart.length}
+                </div>
+            }
           </li>
         </ul>
       </div>

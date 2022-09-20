@@ -17,9 +17,12 @@ import { AppContext } from '../contexts/AppContext';
 import { useInitialState } from '../hooks/useInitialState';
 
 
+
 function AppUI() {
+  const initialState = useInitialState();
+
   return (
-    <AppContext.Provider value={useInitialState}>
+    <AppContext.Provider value={initialState}>
       <BrowserRouter>
         <Routes>
 
