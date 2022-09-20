@@ -3,16 +3,23 @@ import React from 'react';
 import { MobileMenu } from '../components/MobileMenu';
 import { DesktopMenu } from '../components/DesktopMenu';
 
+import { ShoppingCart } from '../components/ShoppingCart';
+
 import { AppContext } from '../contexts/AppContext';
 
 
 function Header() {
   const [isMenuShown, setIsMenuShown] = React.useState(false)
+  const [isShoppingCartShown, setIsShoppingCartShown] = React.useState(false)
 
   const { cart } = React.useContext(AppContext);
 
   const handleShowMenu = () => {
     setIsMenuShown(!isMenuShown);
+  }
+
+  const handleShowShoppingCart = () => {
+    setIsShoppingCartShown(!isShoppingCartShown);
   }
 
   return (
@@ -52,11 +59,15 @@ function Header() {
           <li
             className="text-very-light-pink text-sm mr-3 hidden   sm:block   hover:cursor-pointer hover:text-hospital-green"
             onClick={handleShowMenu}
-            >
-            platzi@example.com</li>
+          >
+            platzi@example.com
+          </li>
           {isMenuShown ? <DesktopMenu /> : null}
           {isMenuShown ? <MobileMenu /> : null}
-          <li className="relative">
+          <li
+            className="relative   hover:cursor-pointer"
+            onClick={handleShowShoppingCart}
+          >
             <img src="../../src/assets/icons/icon_shopping_cart.svg" alt="shopping cart" />
             {cart.length > 0
               && <div className="w-4 h-4 bg-hospital-green rounded-full text-sm font-bold absolute -top-1 -right-1 flex justify-center items-center">
@@ -64,6 +75,7 @@ function Header() {
                 </div>
             }
           </li>
+          {isShoppingCartShown ? <ShoppingCart /> : null}
         </ul>
       </div>
 
