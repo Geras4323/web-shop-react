@@ -5,7 +5,7 @@ function ShoppingCartItem({product}) {
     <div className="w-full flex flex-row mb-6 items-center justify-between">
       <div className="flex flex-row items-center gap-4">
         <figure>
-          <img src={product.images[0]} alt="bike" className="w-16 h-16 rounded-2xl object-cover" />
+          <img src={product.images[0]} alt={product.title} className="w-16 h-16 rounded-2xl object-cover" />
         </figure>
         <p className="sm:max-w-min text-very-light-pink">{product.title}</p>
       </div>

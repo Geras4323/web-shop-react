@@ -27,7 +27,9 @@ function ShoppingCart() {
           <p>
             <span>Total</span>
           </p>
-          <p>$90.00</p>
+          <p>$ {cart.reduce((total, item) => {
+            return total + item.price;
+          }, 0)}</p>
         </div>
 
         <button className="bg-hospital-green border-none rounded-lg text-white w-full cursor-pointer text-md font-bold h-12">
