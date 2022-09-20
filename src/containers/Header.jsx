@@ -27,7 +27,7 @@ function Header() {
     <nav className="fixed top-0 left-0 right-0  bg-white z-10 flex justify-between px-6 border-b border-b-very-light-pink">
       <img
         src="../../src/assets/icons/icon_menu.svg" alt="menu"
-        className="md:hidden"
+        className="md:hidden   hover:cursor-pointer"
         onClick={handleShowMenu}
         />
 

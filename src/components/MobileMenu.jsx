@@ -2,7 +2,7 @@ import React from 'react';
 
 function MobileMenu() {
   return (
-    <div className="bg-white w-screen h-screen p-6 border-t border-t-very-light-pink fixed left-0 top-16 z-10  sm:hidden">
+    <div className="bg-white w-screen h-screen p-6 border-t border-t-very-light-pink fixed left-0 top-16 z-10  md:hidden">
       <ul className="m-6 border-b border-b-very-light-pink">
         <li className="mb-5">
           <a href="/" className="MobileMenu_Item">CATEGORIES</a>
