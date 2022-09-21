@@ -16,10 +16,12 @@ function Header() {
 
   const handleShowMenu = () => {
     setIsMenuShown(!isMenuShown);
+    setIsShoppingCartShown(false);
   }
 
   const handleShowShoppingCart = () => {
     setIsShoppingCartShown(!isShoppingCartShown);
+    setIsMenuShown(false);
   }
 
 
