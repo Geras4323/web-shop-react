@@ -2,6 +2,8 @@ import React from 'react';
 
 function useInitialState() {
   const [cart, setCart] = React.useState([]);
+  const [isShoppingCartShown, setIsShoppingCartShown] = React.useState(false)
+  const [isMenuShown, setIsMenuShown] = React.useState(false)
 
   function addToCart(product) {
     setCart([...cart, product]);
@@ -11,7 +13,16 @@ function useInitialState() {
     setCart(cart.filter((product, index) => index !== indexValue))
   }
 
-  return { cart, addToCart, removeFromCart };
+
+  return {
+    cart,
+    addToCart,
+    removeFromCart,
+    isShoppingCartShown,
+    setIsShoppingCartShown,
+    isMenuShown,
+    setIsMenuShown
+  };
 }
 
 export { useInitialState };

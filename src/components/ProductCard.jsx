@@ -2,22 +2,47 @@ import React from 'react';
 
 import { AppContext } from '../contexts/AppContext';
 
-function ProductCard({ product }) {
-  const { cart, addToCart } = React.useContext(AppContext);
-  const [isAdded, setIsAdded] = React.useState(false)
+import { ProductDetail } from './ProductDetail';
 
-  const handleClick = (item) => {
+function ProductCard({ product }) {
+  const { cart, addToCart, setIsShoppingCartShown } = React.useContext(AppContext);
+
+  const [isAdded, setIsAdded] = React.useState(false)
+  const [isDetailShown, setIsDetailShown] = React.useState(false)
+
+
+  const handleAddProduct = (item) => {
     addToCart(item);
-    setIsAdded(true)
   }
 
+  const handleShowDetail = () => {
+    setIsDetailShown(!isDetailShown)
+    setIsShoppingCartShown(false)
+  }
+
+  // Updates ProductCard addToCart button depending on if it is in the shopping cart
   React.useEffect(() => {
     setIsAdded(cart.some((item) => item === product))
   })
 
+
+
   return (
     <div className="w-36   sm:w-60">
-      <img src={product.images[0]} alt={product.title} className="w-36 h-36 rounded-2xl object-cover   sm:w-60 sm:h-60   hover:cursor-pointer" />
+      <img
+        src={product.images[0]}
+        alt={product.title}
+        className="w-36 h-36 rounded-2xl object-cover   sm:w-60 sm:h-60   hover:cursor-pointer"
+        onClick={handleShowDetail}
+      />
+      {isDetailShown &&
+        <ProductDetail
+          product={product}
+          handleAddProduct={handleAddProduct}
+          isAdded={isAdded}
+          setIsDetailShown={setIsDetailShown}
+        />
+      }
       <div className="flex justify-between items-start mt-3   sm:items-center">
         <div>
           <p className="font-bold text-md mt-0 mb-1">{`$ ${product.price}`}</p>
@@ -25,7 +50,7 @@ function ProductCard({ product }) {
         </div>
         {!isAdded
           ? <figure
-              onClick={() => handleClick(product)}
+              onClick={() => handleAddProduct(product)}
               className="m-0   hover:cursor-pointer">
               <img src="../../src/assets/icons/bt_add_to_cart.svg" />
             </figure>

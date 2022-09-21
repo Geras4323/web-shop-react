@@ -9,10 +9,7 @@ import { AppContext } from '../contexts/AppContext';
 
 
 function Header() {
-  const [isMenuShown, setIsMenuShown] = React.useState(false)
-  const [isShoppingCartShown, setIsShoppingCartShown] = React.useState(false)
-
-  const { cart } = React.useContext(AppContext);
+  const { cart, isShoppingCartShown, setIsShoppingCartShown, isMenuShown, setIsMenuShown } = React.useContext(AppContext);
 
   const handleShowMenu = () => {
     setIsMenuShown(!isMenuShown);
@@ -23,6 +20,7 @@ function Header() {
     setIsShoppingCartShown(!isShoppingCartShown);
     setIsMenuShown(false);
   }
+
 
 
   return (
