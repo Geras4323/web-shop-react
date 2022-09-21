@@ -32,7 +32,7 @@ function ProductDetail({ product, handleAddProduct, isAdded, setIsDetailShown })
         >
           <img src="../../src/assets/icons/icon_close.png" alt="close" />
         </div>
-        <img src={product.images[0]} alt={product.title} className="w-full h-96 sm:p-2 sm:pt-0 object-cover rounded-b-2xl border-b border-b-very-light-pink"/>
+        <img src={product.images[0]} alt={product.title} className="w-full h-80 sm:p-2 sm:pt-0 object-cover rounded-b-2xl border-b border-b-very-light-pink"/>
 
         <div className="h-full mt-6 mx-6 flex flex-col justify-between">
           <div className="h-full flex flex-col">
