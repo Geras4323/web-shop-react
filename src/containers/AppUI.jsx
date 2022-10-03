@@ -2,16 +2,16 @@ import React from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from './Home';
-import { CreateAccount } from './CreateAccount';
-import { Login } from './Login';
-import { Showroom } from './Showroom';
-import { ViewAccountData } from './ViewAccountData';
-import { NewPassword } from './NewPassword';
-import { EmailSent } from './EmailSent';
-import { MyOrders } from './MyOrders';
-import { MyOrder } from './MyOrder';
-import { NotFound } from './NotFound';
+import { Home } from '../routes/Home';
+import { CreateAccount } from '../routes/CreateAccount';
+import { Login } from '../routes/Login';
+import { Showroom } from '../routes/Showroom';
+import { ViewAccountData } from '../routes/ViewAccountData';
+import { NewPassword } from '../routes/NewPassword';
+import { EmailSent } from '../routes/EmailSent';
+import { MyOrders } from '../routes/MyOrders';
+import { MyOrder } from '../routes/MyOrder';
+import { NotFound } from '../routes/NotFound';
 
 import { AppContext } from '../contexts/AppContext';
 import { useInitialState } from '../hooks/useInitialState';
